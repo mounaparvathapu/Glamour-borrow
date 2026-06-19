@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Glamour Borrow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8e8d4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #f8e8d4;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+          
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-family: Garamond, serif;
+            font-size: 20px;
+        }
+        .header nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .container {
+            padding: 40px 20px;
+            flex: 1;
+        }
+        .title {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .cart-items {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .checkout-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .checkout-button button {
+            background-color: #ff6666;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f8e8d4;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        // Function to load cart items from localStorage
+        function loadCartItems() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartContainer = document.querySelector(".cart-items");
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p>Your cart is empty!</p>";
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement("div");
+                cartItem.className = "cart-item";
+                cartItem.innerHTML = `
+                    <div>
+                        <p><strong>${item.name}</strong></p>
+                        <p>RENT: ₹${item.price}</p>
+                    </div>
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                `;
+                cartContainer.appendChild(cartItem);
+            });
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            location.reload(); // Reload the page to update the cart
+        }
+
+        // Load cart items on page load
+        window.onload = loadCartItems;
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">GLAMOUR BORROW</div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="login.html">LOGIN</a>
+            <a href="products.html">PRODUCTS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="account.html">ACCOUNT</a>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="title">CART ITEMS</div>
+        <div class="cart-items"></div>
+        <div class="checkout-button">
+            <button onclick="location.href='checkout.html'">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="footer">© 2024 Glamour Borrow Store</div>
+</body>
+</html>

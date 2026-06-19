@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Borrow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <script>
+        function addToCart(item) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${item.name} added to cart!`);
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8e8dc;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header flex items-center justify-between p-5 bg-[#f8e8dc]">
+        <div class="logo flex items-center">
+            <img alt="Glamour Borrow Logo" class="h-12 w-12" src="https://storage.googleapis.com/a1aa/image/976u0l6rO0pZFFe0yFcWaSP3KlUoB924BLFSvxjBuwVPT92JA.jpg">
+            <h1 class="text-2xl font-bold ml-2">Glamour Borrow</h1>
+        </div>
+        <div class="nav flex items-center">
+            <a class="mx-3 text-lg text-gray-800 hover:font-bold" href="homepage.html">Home</a>
+            <a class="mx-3 text-lg text-gray-800 hover:font-bold" href="products.html">Collection</a>
+            <a class="mx-3 text-lg text-gray-800 hover:font-bold" href="about us.html">About Us</a>
+            <a class="mx-3 text-lg text-gray-800 hover:font-bold" href="contact us.html">Contact</a>
+            <a class="mx-3 text-lg text-gray-800 hover:font-bold" href="account.html">Account</a>
+            <a class="mx-3 text-lg text-gray-800 hover:font-bold" href="cart.html">Cart</a>
+        </div>
+    </div>
+
+    <div class="content text-center py-12">
+        <h2 class="text-2xl font-bold mb-6">FOOTWEAR:</h2>
+        <div class="dresses flex justify-center items-center">
+            <div class="dress mx-5 text-center">
+                <img alt="sandals" class="w-72 h-96 object-cover rounded-lg" src=https://storage.googleapis.com/a1aa/image/GakmCx7cjxKzIZCcjTDX51X08jjDKO8r8sumnNUIfpbeOJyTA.jpg>
+                <p class="text-lg font-bold mt-2">Black Heels</p>
+                <p class="text-lg font-bold mt-2">RENT: ₹1599</p>
+                <button onclick="addToCart({id: 1, name: 'Sandals', price: 1999, image: 'https://storage.googleapis.com/a1aa/image/dmBQ7k54oPq9HhgVdtXY6v6jArZRLs2ue6UvEitNwOegm6tTA.jpg'})" class="bg-[#a67c68] text-white py-2 px-4 rounded-full mt-2 hover:bg-[#8b5e4e]">Add to Cart</button>
+            </div>
+            <div class="dress mx-5 text-center">
+                <img alt="Woman in a golden gown" class="w-72 h-96 object-cover rounded-lg" src=https://storage.googleapis.com/a1aa/image/0XdIilXLcQbsKNmBPmPZuk2MQILJFL5NUoAUqomOt0d3Ui8E.jpg>
+                <p class="text-lg font-bold mt-2">heels</p>
+                <p class="text-lg font-bold mt-2">RENT: ₹2999</p>
+                <button onclick="addToCart({id: 1, name: 'heels', price: 2999, image: 'C:\Users\parva\Downloads\dress333.jpg'})" class="bg-[#a67c68] text-white py-2 px-4 rounded-full mt-2 hover:bg-[#8b5e4e]">Add to Cart</button>
+            </div>
+            <div class="dress mx-5 text-center">
+                <img alt="heels" class="w-72 h-96 object-cover rounded-lg" src="C:\Users\parva\Downloads\foot11.jpg">
+                <p class="text-lg font-bold mt-2">Flats</p>
+                <p class="text-lg font-bold mt-2">RENT: ₹1599</p>
+                <button onclick="addToCart({id: 1, name: 'Flats', price: 1599, image: 'C:\Users\parva\Downloads\dress333.jpg'})" class="bg-[#a67c68] text-white py-2 px-4 rounded-full mt-2 hover:bg-[#8b5e4e]">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

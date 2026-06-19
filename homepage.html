@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Borrow</title>
+    <style>
+        body {
+            font-family: Josefin Sans;
+            margin: 0;
+            padding: 0;
+            background-color: #f2e9e1;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f2e9e1;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .carousel-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #f2e9e1;
+        }
+        .carousel-text {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .carousel {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            overflow: hidden;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .carousel img {
+            width: 1500px;
+            height: 3000px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .carousel-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: 10px auto;
+        }
+        .carousel-button {
+            background-color: #fff;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+        .shop-now {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d3b49f;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .shop-now:hover {
+            background-color: #b29384;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">Glamour Borrow</div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="login.html">Login</a>
+            <a href="#">Collection</a>
+            <a href="#">About us</a>
+            <a href="#">Contact</a>
+            <a href="#">Account</a>
+            <a href="#"><img src="C:\Users\parva\Downloads\search image.webp" alt="Search" style="width: 200px; vertical-align: middle;"></a>
+            <a href="#"><img src="C:\Users\parva\Downloads\cart picture.jpg" alt="Cart" style="width: 30px; vertical-align: middle;"></a>
+        </div>
+    </div>
+
+    <div class="carousel-container">
+        <p class="carousel-text">Find your favourite style, all the fashion you need is here</p>
+        <div class="carousel">
+            <button class="carousel-button">❮</button>
+                <img src="C:\Users\parva\Downloads\Cream Professional Online Shop Desktop Prototype (11).png" alt="Fashion Collection" style="max-width: 100%; height: auto;">
+            <button class="carousel-button">❯</button>
+        </div>
+        <p>A hassle-free way to find the perfect rental. Checkout now!</p>
+        <a href="#" class="shop-now">SHOP NOW</a>
+    </div>
+
+</body>
+</html>

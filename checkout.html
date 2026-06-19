@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Glamour Borrow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8e8d4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #f8e8d4;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-family: Garamond, serif;
+            font-size: 20px;
+        }
+        .header nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .container {
+            padding: 40px 20px;
+            flex: 1;
+        }
+        .title {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .checkout-form {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .checkout-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .checkout-button button {
+            background-color: #ffcc33;
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .checkout-button button:hover {
+            background-color: #e59400;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f8e8d4;
+            font-size: 16px;
+            position: relative;
+        }
+        .cart-link {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .cart-link:hover {
+            background-color: #ffcc33;
+        }
+    </style>
+    <script>
+        // Function to display a notification when the order is placed
+        function showOrderNotification(event) {
+            event.preventDefault();
+            alert("Thank you for your order! Your order has been placed.");
+            localStorage.removeItem("cart");
+            window.location.href = "buyleswermr.html";
+        }
+    </script>
+    
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">GLAMOUR BORROW</div>
+        <nav>
+            <a href="homepage.html">HOME</a>
+            <a href="login.html">LOGIN</a>
+            <a href="products.html">PRODUCTS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="account.html">ACCOUNT</a>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="title">CHECKOUT</div>
+        <div class="checkout-form">
+            <form onsubmit="showOrderNotification(event)">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input id="name" name="name" type="text" placeholder="Enter your full name" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input id="email" name="email" type="email" placeholder="Enter your email" required />
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" placeholder="Enter your full address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="payment">Payment Method:</label>
+                    <select id="payment" name="payment" required>
+                        <option value="credit-card">Credit Card</option>
+                        <option value="debit-card">Debit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="cash-on-delivery">Cash on Delivery</option>
+                    </select>
+                </div>
+                <div class="checkout-button">
+                    <button type="submit">Confirm Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        © 2024 Glamour Borrow Store
+        <a class="cart-link" href="cart.html">CART</a>
+    </div>
+</body>
+</html>
