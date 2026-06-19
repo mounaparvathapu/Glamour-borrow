@@ -21,12 +21,6 @@ A web-based fashion rental platform that allows users to browse, rent, and retur
 
 ---
 
-## 🎯 Project Objective
-
-The objective of Glamour Borrow is to provide an affordable and sustainable alternative to purchasing expensive fashion items. Users can rent outfits for weddings, parties, festivals, and special occasions, then return them after use. This approach helps reduce fashion waste while giving customers access to a wide variety of stylish outfits at a lower cost.
-
----
-
 ## 🖥️ Project Structure
 
 ```text
@@ -57,7 +51,6 @@ No additional installation or backend setup is required.
 - Reduces Unnecessary Clothing Purchases
 - Affordable Access to Premium Outfits
 - Convenient Rental Process
-- Environment-Friendly Approach
 
 ---
 
